@@ -22,7 +22,7 @@ type Product = { id: string; name: string; weight: string; price: number; img: s
 
 const PRODUCTS: Product[] = [
   { id: "petit", name: "PERSONAL RITUAL", weight: "250 g · 12 pieces", price: 799, img: product1Img },
-  { id: "grand", name: "ROSCHA Grand", weight: "500 g · 24 pieces", price: 1499, img: product2Img },
+  { id: "grand", name: "GOURMET GIFT", weight: "500 g · 24 pieces", price: 1499, img: product2Img },
 ];
 
 type CartItem = Product & { qty: number };
@@ -179,12 +179,12 @@ function Index() {
                 <img src={p.img} alt={p.name} className="product-img" loading="lazy" />
               </div>
               <div className="product-info">
-                <span className="product-badge">{idx === 0 ? "Signature Collection" : "Grand Collection · Best Value"}</span>
+                <span className="product-badge">{idx === 0 ? "Signature Collection" : "Grand Collection · Connoisseur Box"}</span>
                 <h3 className="product-name">{p.name}</h3>
                 <p className="product-desc">
                   {idx === 0
                     ? "Perfect for personal mindfulness and daily clean energy."
-                    : "Twenty-four premium pieces in our lacquered black luxury box with gold foil stamping. The ultimate gift of conscious indulgence."}
+                    : "Ideal for gifting and sharing a sophisticated culinary experience."}
                 </p>
                 <div className="product-footer">
                   <div>
