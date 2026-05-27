@@ -156,13 +156,23 @@ function Index() {
               <div><div className="stat-num">2</div><div className="stat-label">Hero Botanicals</div></div>
             </div>
             <div className="philosophy-extra-images">
-              <div className="extra-img-slot" aria-label="Image placeholder 1">
-                <span>Add Image</span>
-              </div>
-              <div className="extra-img-slot" aria-label="Image placeholder 2">
-                <span>Add Image</span>
-              </div>
+              {[0, 1].map((idx) => (
+                <label key={idx} className="extra-img-slot" aria-label={`Upload image ${idx + 1}`}>
+                  {extraImgs[idx] ? (
+                    <img src={extraImgs[idx] as string} alt={`Custom upload ${idx + 1}`} />
+                  ) : (
+                    <span>+ Upload Image</span>
+                  )}
+                  <input
+                    type="file"
+                    accept="image/*"
+                    style={{ display: "none" }}
+                    onChange={(e) => handleExtraImgUpload(idx, e.target.files?.[0] ?? null)}
+                  />
+                </label>
+              ))}
             </div>
+
           </div>
           <div className="philosophy-img-wrap reveal">
             <img src={philosophyImg} alt="Artisan crafting ROSCHA" className="philosophy-img" loading="lazy" />
