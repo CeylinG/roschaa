@@ -236,9 +236,9 @@ function Index() {
       <section className="experience">
         <div className="reveal" style={{ position: "relative", zIndex: 1 }}>
           <div className="section-label">The Ritual</div>
-          <h2 className="section-heading">More than a sweet.<br/><em>A moment of presence.</em></h2>
+          <h2 className="section-heading">More than a sweet.<br/><em>A new shade of delight.</em></h2>
           <p className="experience-text">
-            "Each ROSCHA piece is an invitation to slow down — to taste the mountain mist of Japan in ceremonial matcha, and the rose-breathed valleys of Isparta in a single, unhurried moment."
+            "Two ancient rituals — Anatolian rose gardens and Uji tea ceremonies — re-imagined into a single cube. Each ROSCHA piece is an invitation to slow down. "
           </p>
           <a href="#shop" className="btn-primary">Begin Your Ritual</a>
         </div>
@@ -247,7 +247,7 @@ function Index() {
       <footer className="roscha-footer">
         <div>
           <span className="footer-logo">ROSCHA</span>
-          <p className="footer-tagline">Turkish Delight with Matcha & Rose. Zero sugar. Pure botanicals. Infinite pleasure.</p>
+          <p className="footer-tagline">Turkish Delight with Matcha & Rose. Get rituals, new drops, and quiet notes from our garden.</p>
         </div>
         <div>
           <h5 className="footer-heading">Navigate</h5>
