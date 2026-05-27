@@ -21,7 +21,7 @@ export const Route = createFileRoute("/")({
 type Product = { id: string; name: string; weight: string; price: number; img: string };
 
 const PRODUCTS: Product[] = [
-  { id: "petit", name: "ROSCHA Petit", weight: "250 g · 12 pieces", price: 799, img: product1Img },
+  { id: "petit", name: "PERSONAL RITUAL", weight: "250 g · 12 pieces", price: 799, img: product1Img },
   { id: "grand", name: "ROSCHA Grand", weight: "500 g · 24 pieces", price: 1499, img: product2Img },
 ];
 
@@ -183,7 +183,7 @@ function Index() {
                 <h3 className="product-name">{p.name}</h3>
                 <p className="product-desc">
                   {idx === 0
-                    ? "Twelve artisan pieces nestled in our signature cream gift box. Perfect for gifting or an intimate personal ritual. Six matcha and six rose-petal pieces."
+                    ? "Perfect for personal mindfulness and daily clean energy."
                     : "Twenty-four premium pieces in our lacquered black luxury box with gold foil stamping. The ultimate gift of conscious indulgence."}
                 </p>
                 <div className="product-footer">
