@@ -129,6 +129,14 @@ function Index() {
               <div><div className="stat-num">100%</div><div className="stat-label">Natural Colors</div></div>
               <div><div className="stat-num">2</div><div className="stat-label">Hero Botanicals</div></div>
             </div>
+            <div className="philosophy-extra-images">
+              <div className="extra-img-slot" aria-label="Image placeholder 1">
+                <span>Add Image</span>
+              </div>
+              <div className="extra-img-slot" aria-label="Image placeholder 2">
+                <span>Add Image</span>
+              </div>
+            </div>
           </div>
           <div className="philosophy-img-wrap reveal">
             <img src={philosophyImg} alt="Artisan crafting ROSCHA" className="philosophy-img" loading="lazy" />
