@@ -33,6 +33,32 @@ function Index() {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [toast, setToast] = useState("");
   const [addedId, setAddedId] = useState<string | null>(null);
+  const [extraImgs, setExtraImgs] = useState<(string | null)[]>([null, null]);
+
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem("roscha-extra-imgs");
+      if (raw) setExtraImgs(JSON.parse(raw));
+    } catch {}
+  }, []);
+
+  const handleExtraImgUpload = (idx: number, file: File | null) => {
+    if (!file) return;
+    if (file.size > 5 * 1024 * 1024) {
+      setToast("Image must be under 5MB");
+      setTimeout(() => setToast(""), 2400);
+      return;
+    }
+    const reader = new FileReader();
+    reader.onload = () => {
+      const next = [...extraImgs];
+      next[idx] = reader.result as string;
+      setExtraImgs(next);
+      try { localStorage.setItem("roscha-extra-imgs", JSON.stringify(next)); } catch {}
+    };
+    reader.readAsDataURL(file);
+  };
+
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
