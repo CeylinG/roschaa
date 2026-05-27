@@ -33,6 +33,32 @@ function Index() {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [toast, setToast] = useState("");
   const [addedId, setAddedId] = useState<string | null>(null);
+  const [extraImgs, setExtraImgs] = useState<(string | null)[]>([null, null]);
+
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem("roscha-extra-imgs");
+      if (raw) setExtraImgs(JSON.parse(raw));
+    } catch {}
+  }, []);
+
+  const handleExtraImgUpload = (idx: number, file: File | null) => {
+    if (!file) return;
+    if (file.size > 5 * 1024 * 1024) {
+      setToast("Image must be under 5MB");
+      setTimeout(() => setToast(""), 2400);
+      return;
+    }
+    const reader = new FileReader();
+    reader.onload = () => {
+      const next = [...extraImgs];
+      next[idx] = reader.result as string;
+      setExtraImgs(next);
+      try { localStorage.setItem("roscha-extra-imgs", JSON.stringify(next)); } catch {}
+    };
+    reader.readAsDataURL(file);
+  };
+
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -130,13 +156,23 @@ function Index() {
               <div><div className="stat-num">2</div><div className="stat-label">Hero Botanicals</div></div>
             </div>
             <div className="philosophy-extra-images">
-              <div className="extra-img-slot" aria-label="Image placeholder 1">
-                <span>Add Image</span>
-              </div>
-              <div className="extra-img-slot" aria-label="Image placeholder 2">
-                <span>Add Image</span>
-              </div>
+              {[0, 1].map((idx) => (
+                <label key={idx} className="extra-img-slot" aria-label={`Upload image ${idx + 1}`}>
+                  {extraImgs[idx] ? (
+                    <img src={extraImgs[idx] as string} alt={`Custom upload ${idx + 1}`} />
+                  ) : (
+                    <span>+ Upload Image</span>
+                  )}
+                  <input
+                    type="file"
+                    accept="image/*"
+                    style={{ display: "none" }}
+                    onChange={(e) => handleExtraImgUpload(idx, e.target.files?.[0] ?? null)}
+                  />
+                </label>
+              ))}
             </div>
+
           </div>
           <div className="philosophy-img-wrap reveal">
             <img src={philosophyImg} alt="Artisan crafting ROSCHA" className="philosophy-img" loading="lazy" />
