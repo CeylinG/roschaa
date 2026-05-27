@@ -374,6 +374,9 @@ footer.roscha-footer {
   margin-top: 2rem;
 }
 .extra-img-slot {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
   aspect-ratio: 4 / 5;
   border: 1px dashed color-mix(in oklab, var(--dark) 30%, transparent);
   background: color-mix(in oklab, var(--cream) 60%, transparent);
@@ -387,6 +390,7 @@ footer.roscha-footer {
   font-weight: 300;
   transition: border-color 0.3s ease, color 0.3s ease;
 }
+
 .extra-img-slot:hover {
   border-color: var(--matcha);
   color: var(--matcha);
