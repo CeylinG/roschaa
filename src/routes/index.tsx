@@ -5,7 +5,7 @@ import philosophyImg from "@/assets/philosophy.jpg";
 import product1Img from "@/assets/product1.jpg";
 import product2Img from "@/assets/product2.jpg";
 import benefitsImg from "@/assets/benefits.jpg";
-import roseGardenImg from "@/assets/rose-garden.jpg";
+import roseGardenImg from "@/assets/rose-garden-updated.png";
 import matchaImg from "@/assets/matcha.jpg";
 
 export const Route = createFileRoute("/")({
