@@ -35,35 +35,6 @@ function Index() {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [toast, setToast] = useState("");
   const [addedId, setAddedId] = useState<string | null>(null);
-  const defaultExtraImgs = [roseGardenImg, matchaImg];
-  const [extraImgs, setExtraImgs] = useState<(string | null)[]>(defaultExtraImgs);
-
-  useEffect(() => {
-    try {
-      const raw = localStorage.getItem("roscha-extra-imgs");
-      if (raw) {
-        const parsed = JSON.parse(raw) as (string | null)[];
-        setExtraImgs(parsed.map((v, i) => v ?? defaultExtraImgs[i] ?? null));
-      }
-    } catch {}
-  }, []);
-
-  const handleExtraImgUpload = (idx: number, file: File | null) => {
-    if (!file) return;
-    if (file.size > 5 * 1024 * 1024) {
-      setToast("Image must be under 5MB");
-      setTimeout(() => setToast(""), 2400);
-      return;
-    }
-    const reader = new FileReader();
-    reader.onload = () => {
-      const next = [...extraImgs];
-      next[idx] = reader.result as string;
-      setExtraImgs(next);
-      try { localStorage.setItem("roscha-extra-imgs", JSON.stringify(next)); } catch {}
-    };
-    reader.readAsDataURL(file);
-  };
 
 
   useEffect(() => {
@@ -162,22 +133,11 @@ function Index() {
               <div><div className="stat-num">2</div><div className="stat-label">Hero Botanicals</div></div>
             </div>
             <div className="philosophy-extra-images">
-              {[0, 1].map((idx) => (
-                <label key={idx} className="extra-img-slot" aria-label={`Upload image ${idx + 1}`}>
-                  {extraImgs[idx] ? (
-                    <img src={extraImgs[idx] as string} alt={`Custom upload ${idx + 1}`} />
-                  ) : (
-                    <span>+ Upload Image</span>
-                  )}
-                  <input
-                    type="file"
-                    accept="image/*"
-                    style={{ display: "none" }}
-                    onChange={(e) => handleExtraImgUpload(idx, e.target.files?.[0] ?? null)}
-                  />
-                </label>
-              ))}
+              <img src={roseGardenImg} alt="Rose garden at golden hour" />
+              <img src={matchaImg} alt="Ceremonial matcha preparation" />
             </div>
+
+
 
           </div>
           <div className="philosophy-img-wrap reveal">
