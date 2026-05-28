@@ -5,6 +5,8 @@ import philosophyImg from "@/assets/philosophy.jpg";
 import product1Img from "@/assets/product1.jpg";
 import product2Img from "@/assets/product2.jpg";
 import benefitsImg from "@/assets/benefits.jpg";
+import roseGardenImg from "@/assets/rose-garden.jpg";
+import matchaImg from "@/assets/matcha.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -33,12 +35,16 @@ function Index() {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [toast, setToast] = useState("");
   const [addedId, setAddedId] = useState<string | null>(null);
-  const [extraImgs, setExtraImgs] = useState<(string | null)[]>([null, null]);
+  const defaultExtraImgs = [roseGardenImg, matchaImg];
+  const [extraImgs, setExtraImgs] = useState<(string | null)[]>(defaultExtraImgs);
 
   useEffect(() => {
     try {
       const raw = localStorage.getItem("roscha-extra-imgs");
-      if (raw) setExtraImgs(JSON.parse(raw));
+      if (raw) {
+        const parsed = JSON.parse(raw) as (string | null)[];
+        setExtraImgs(parsed.map((v, i) => v ?? defaultExtraImgs[i] ?? null));
+      }
     } catch {}
   }, []);
 
