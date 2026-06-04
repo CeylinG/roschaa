@@ -214,9 +214,9 @@ function Index() {
         <div className="benefits-layout">
           <div className="benefit-list">
             {[
-              { n:"01", t:"Zero Added Sugar", d:"Traditional Turkish Delight contains up to 80% refined sugar. ROSCHA contains none — sweetened exclusively with Stevia and Erythritol." },
-              { n:"02", t:"Clean, Focused Energy", d:"Matcha's L-theanine and natural caffeine deliver smooth, sustained mental clarity — no spike, no crash." },
-              { n:"03", t:"Antioxidant Abundance", d:"Catechins from green tea and flavonoids from Damask rose — a potent pairing that supports cellular health." },
+              { n:"01", t:"Zero Added Sugar", d:"Traditional Turkish Delight contains up to 80% refined sugar. ROSCHA contains none." },
+              { n:"02", t:"Clean, Focused Energy", d:"Matcha's L-theanine and natural caffeine deliver smooth, sustained mental clarity. No spike, no crash." },
+              { n:"03", t:"Antioxidant Abundance", d:"Catechins from green tea and flavonoids from Damask rose, a potent pairing that supports cellular health." },
               { n:"04", t:"Naturally Vibrant", d:"The vivid green and blush hues come solely from high-grade botanical extracts. No artificial dyes. No synthetic anything." },
             ].map((b) => (
               <div className="benefit-item reveal" key={b.n}>
