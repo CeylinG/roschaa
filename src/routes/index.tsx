@@ -124,7 +124,7 @@ function Index() {
         </div>
         <div className="philosophy-grid">
           <div className="philosophy-text reveal">
-            <p>ROSCHA was born from a singular question: why should indulgence come at the cost of wellbeing? We reimagined the centuries-old tradition of Turkish Delight — stripping away refined sugars, preservatives, and artifice — to reveal something truer and more beautiful beneath.</p>
+            <p>ROSCHA was born from a singular question: why should indulgence come at the cost of wellbeing? We reimagined the centuries-old tradition of Turkish Delight stripping away refined sugars, preservatives, and artifice  to reveal something truer and more beautiful beneath.</p>
             <p>Every piece carries the verdant depth of Japanese ceremonial matcha and the floral grace of Isparta roses, harvested from Turkey's fragrant Rose Valley. Together, they create a sensory dialogue between East and West, ancient wisdom and modern clarity.</p>
             <p>Our sweetness comes only from nature — Stevia leaf and Erythritol — making ROSCHA the first luxury Turkish Delight designed for those who refuse to choose between pleasure and health.</p>
             <div className="philosophy-stats">
