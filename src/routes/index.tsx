@@ -142,7 +142,6 @@ function Index() {
           </div>
           <div className="philosophy-img-wrap reveal">
             <img src={philosophyImg} alt="Artisan crafting ROSCHA" className="philosophy-img" loading="lazy" />
-            <div className="philosophy-img-accent" />
           </div>
         </div>
       </section>
