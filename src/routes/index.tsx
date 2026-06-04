@@ -4,7 +4,7 @@ import heroImg from "@/assets/hero-kelebek.png";
 import philosophyImg from "@/assets/philosophy-updated.png";
 import product1Img from "@/assets/product1.jpg";
 import product2Img from "@/assets/product2.jpg";
-import benefitsImg from "@/assets/benefits.jpg";
+import benefitsImg from "@/assets/benefits-updated.jpg";
 import roseGardenImg from "@/assets/rose-garden-updated.png";
 import matchaImg from "@/assets/matcha-updated.png";
 
