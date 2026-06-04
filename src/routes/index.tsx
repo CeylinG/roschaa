@@ -156,8 +156,8 @@ function Index() {
           {[
             { n:"01", name:"Ceremonial Matcha", desc:"First-harvest Japanese matcha, stone-ground from shade-grown tencha leaves. Rich in L-theanine for focused, calm energy without the crash.", tag:"Clean Energy" },
             { n:"02", name:"Isparta Rose", desc:"Handpicked Damask roses from Turkey's Valley of Roses. Naturally soothing, antioxidant-rich petals that support emotional well-being.", tag:"Emotional Calm" },
-            { n:"03", name:"Stevia & Erythritol", desc:"Plant-derived sweetness with zero glycemic impact. Diabetic-friendly, calorie-free, indistinguishable from sugar in depth of flavor.", tag:"Zero Sugar" },
-            { n:"04", name:"Pure Tradition", desc:"Our base follows the original Ottoman method — slow-cooked starch, no gelatin, no artificial additives. The same craft, purified.", tag:"Artisan Craft" },
+            { n:"03", name:"Natural Sweetness", desc:"Plant-derived sweetness with zero glycemic impact. Diabetic-friendly, calorie-free, indistinguishable from sugar in depth of flavor.", tag:"Zero Sugar" },
+            { n:"04", name:"Pure Tradition", desc:"Our base follows the original Ottoman method no gelatin, no artificial additives. The same craft, purified.", tag:"Artisan Craft" },
           ].map((i) => (
             <div className="ing-card reveal" key={i.n}>
               <div className="ing-number">{i.n}</div>
