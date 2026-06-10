@@ -13,4 +13,24 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  vite: {
+    build: {
+      rollupOptions: {
+        // TanStack paketleri (react-router, react-query vb.) top-level "use client"
+        // direktifleri içeriyor. Rollup bunları "Module level directives cause errors
+        // when bundled" uyarısıyla raporluyor ve bazı CI ortamlarında (Netlify) build
+        // fail olarak işaretleniyor. Bu uyarıları yutuyoruz; davranışa etkisi yok.
+        onwarn(warning, defaultHandler) {
+          if (
+            warning.code === "MODULE_LEVEL_DIRECTIVE" &&
+            typeof warning.message === "string" &&
+            warning.message.includes("use client")
+          ) {
+            return;
+          }
+          defaultHandler(warning);
+        },
+      },
+    },
+  },
 });
